@@ -1,10 +1,47 @@
 \documentclass[]{article}
-
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
 \begin{document}
+	
 \section{Complexity Zoo}
 
-\subsection{P}
-
+\subsection{$\mathbf{P}$}
+\label{sec:P}
+Informally: all problems that can be solved in polynomial time.
+\begin{definition}
+	$$\mathbf{P} = \bigcup_{k\geq 0} \mathtt{TIME}[n^{k}]$$
+\end{definition}
+$ $
+\\
+\\
+Descriptive Complexity definitions: 
+\begin{definition}
+	$$\mathbf{P} = \text{FO(LFP)}$$
+(First Order logic extended with the Least Fixed Point operator, with successor)
+\end{definition}
+\begin{definition}
+	$$\mathbf{P} = \text{SO(Horn)}$$
+(Second Order logic restricted with Horn)
+\end{definition}
+$ $
+\\
+\\
+Circuit Complexity definition:
+\begin{definition}
+	$$\mathbf{P} = \text{Set of problems that can be solved by a polynomial-time uniform family of boolean circuits}$$
+\end{definition}
+$ $
+\\
+\\
+Notable Problems in $\mathbf{P}$:
+\begin{itemize}
+	\item 2-SAT
+	\item 2-Colourability
+	\item Reachability
+\end{itemize}
 \subsection{NP}
 
 \subsection{FPT}
@@ -33,9 +70,9 @@
 
 \subsection{PH}
 
-\subsection{PSAT}
+\subsection{$P^{SAT}$}
 
-\subsection{NPSAT}
+\subsection{$NP^{SAT}$}
 
 \subsection{P/poly}
 
@@ -45,19 +82,19 @@
 
 \subsection{NC}
 
-\subsection{NC0}
+\subsection{$NC_0$}
 
-\subsection{NC1}
+\subsection{$NC_1$}
 
-\subsection{NC2}
+\subsection{$NC_2$}
 
-\subsection{NCi}
+\subsection{$NC_i$}
 
-\subsection{ACi}
+\subsection{$AC_i$}
 
-\subsection{AC0}
+\subsection{$AC_0$}
 
-\subsection{AC1}
+\subsection{$AC_1$}
 
 \subsection{BPP}
 
