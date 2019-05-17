@@ -42,8 +42,35 @@ Notable Problems in $\mathbf{P}$:
 	\item 2-Colourability
 	\item Reachability
 \end{itemize}
-\subsection{NP}
-
+\subsection{$\mathbf{NP}$}
+\label{sec:NP}
+Informally: all problems that can be solved in nondeterministic polynomial time.
+\begin{definition}
+	$$\mathbf{NP} = \bigcup_{k\geq 0} \mathtt{NTIME}[n^{k}]$$
+\end{definition}
+$ $
+\\
+\\
+In terms of a verifier:
+\\
+Informally: The set of decision problems where a solution can be verified in polynomial time.
+\\
+\\
+Descriptive Complexity Definition:
+\begin{definition}
+	$$\mathbf{NP} = \text{SO}\exists$$
+	(Existential Second Order)
+\end{definition}
+$ $
+\\
+\\
+Notable Problems in $\mathbf{P}$:
+\begin{itemize}
+	\item SAT
+	\item 3-Colourability
+	\item TSP
+	\item Subset sum
+\end{itemize}
 \subsection{FPT}
 
 \subsection{W[1]}
