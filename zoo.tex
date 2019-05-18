@@ -2,12 +2,26 @@
 \usepackage{hyperref}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{amssymb}
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
 \begin{document}
 	
 \section{Complexity Zoo}
 
+\subsection{General time and space complexity classes}
+Central to complexity theory is identifying the `complexity' of a problem with the amount of time needed to solve it. 
+
+\begin{definition}
+	Given some function $f : \mathbb{N} \to \mathbb{N}$, $\mathtt{TIME}[f(n)]$ are the set of problems solvable within $O(f(n))$ atomic steps on a deterministic Turing machine. Here $n$ is the size of the input.
+\end{definition}
+For most conventional time-complexity classes, the big-oh in the definition is superficial.
+
+\begin{definition}
+	Given some function $f : \mathbb{N} \to \mathbb{N}$, $\mathtt{NTIME}[f(n)]$ are the set of problems solvable within $O(f(n))$ atomic steps on a nondeterministic Turing machine.
+\end{definition}
+
+$\mathtt{SPACE}$ and $\mathtt{NSPACE}$ are defined similarly.
 \subsection{$\mathbf{P}$}
 \label{sec:P}
 Informally: all problems that can be solved in polynomial time.
@@ -20,11 +34,11 @@ $ $
 Descriptive Complexity definitions: 
 \begin{definition}
 	$$\mathbf{P} = \text{FO(LFP)}$$
-(First Order logic extended with the Least Fixed Point operator, with successor)
+(First Order logic extended with the Least Fixed Point operator, with successor. A high level, handwavy description of the LFP operator is the added ability to recursively define FO formulas.)
 \end{definition}
 \begin{definition}
 	$$\mathbf{P} = \text{SO(Horn)}$$
-(Second Order logic restricted with Horn)
+(Second Order logic restricted with Horn. SO logic allows you to quantify over subsets/relations/functions on the domain, and Horn means all `clauses' are really implications with literal in the conclusion and all literals positive.)
 \end{definition}
 $ $
 \\
