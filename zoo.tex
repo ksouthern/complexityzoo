@@ -1,5 +1,5 @@
 \documentclass[]{article}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
@@ -9,24 +9,40 @@
 	
 \section{Complexity Zoo}
 
-\subsection{General time and space complexity classes}
-Central to complexity theory is identifying the `complexity' of a problem with the amount of time needed to solve it. 
-
+\subsection{TIME[f(n)]}
+\label{sec:TIME}
+Informally: problems that can be solved in f(n) time. 
 \begin{definition}
-	Given some function $f : \mathbb{N} \to \mathbb{N}$, $\mathtt{TIME}[f(n)]$ are the set of problems solvable within $O(f(n))$ atomic steps on a deterministic Turing machine. Here $n$ is the size of the input.
-\end{definition}
-For most conventional time-complexity classes, the big-oh in the definition is superficial.
-
-\begin{definition}
-	Given some function $f : \mathbb{N} \to \mathbb{N}$, $\mathtt{NTIME}[f(n)]$ are the set of problems solvable within $O(f(n))$ atomic steps on a nondeterministic Turing machine.
+	Given some function $f : \mathbb{N} \to \mathbb{N}$, $\text{TIME}[f(n)]$ are the set of problems solvable within $O(f(n))$ atomic steps on a deterministic Turing machine. Where $n$ is the size of the input.
 \end{definition}
 
-$\mathtt{SPACE}$ and $\mathtt{NSPACE}$ are defined similarly.
+\subsection{NTIME[f(n)]}
+\label{sec:NTIME}
+Informally: problems that can be solved nondeterministically in f(n) time. 
+\begin{definition}
+	Given some function $f : \mathbb{N} \to \mathbb{N}$, $\text{NTIME}[f(n)]$ are the set of problems solvable within $O(f(n))$ atomic steps on a nondeterministic Turing machine.
+\end{definition}
+
+\subsection{SPACE[f(n)]}
+\label{sec:SPACE}
+Informally: problems that can be solved in f(n) space. 
+\begin{definition}
+	Given some function $f : \mathbb{N} \to \mathbb{N}$, $\text{SPACE}[f(n)]$ are the set of problems solvable using a tape of length $O(f(n))$ on a deterministic Turing machine. Where $n$ is the size of the input.
+\end{definition}
+
+\subsection{NSPACE[f(n)]}
+\label{sec:NSPACE}
+Informally: problems that can be solved non-deterministically in f(n) space. 
+\begin{definition}
+	Given some function $f : \mathbb{N} \to \mathbb{N}$, $\text{NSPACE}[f(n)]$ are the set of problems solvable using a tape of length $O(f(n))$ on a non-deterministic Turing machine. Where $n$ is the size of the input.
+\end{definition}
+
+
 \subsection{$\mathbf{P}$}
 \label{sec:P}
 Informally: all problems that can be solved in polynomial time.
 \begin{definition}
-	$$\mathbf{P} = \bigcup_{k\geq 0} \text{TIME}[n^{k}]$$
+	$$\mathbf{P} = \bigcup_{k\geq 0} \hyperref[sec:TIME]{\text{TIME}}[n^{k}]$$
 \end{definition}
 $ $
 \\
@@ -60,7 +76,7 @@ Notable Problems in $\mathbf{P}$:
 \label{sec:NP}
 Informally: all problems that can be solved in nondeterministic polynomial time.
 \begin{definition}
-	$$\mathbf{NP} = \bigcup_{k\geq 0} \text{NTIME}[n^{k}]$$
+	$$\mathbf{NP} = \bigcup_{k\geq 0} \hyperref[sec:NTIME]{\text{NTIME}}[n^{k}]$$
 \end{definition}
 $ $
 \\
