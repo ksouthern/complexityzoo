@@ -123,6 +123,27 @@ Notable Problems in $\mathbf{FPT}$:
 	\item Vertex Cover
 \end{itemize}
 \subsection{W[1]}
+\label{sec:W[1]}
+
+\begin{definition}
+	The class of parametrized problems that admit a parametrized reduction to the following problem:
+	Given a	nondeterministic single-tape Turing machine, decide if it accepts within k steps.
+\end{definition}
+N.B This is short acceptance
+\begin{definition}
+	The class of parametrized problems that admit a parametrized reduction to the following problem:
+	Given a Boolean circuit C, with a mixture of fanin-2 and unbounded-fanin gates. There is at most 1 unbounded-fanin gate along any path to the root, and the total depth (fanin-2 and unbounded-fanin) is constant. Does C have a satisfying assignment of Hamming weight k?
+\end{definition}
+N.B This is Weighted 3-SAT.
+\\
+\\
+Notable Problems in $\mathbf{W[1]}$:
+\begin{itemize}
+	\item Short Acceptance
+	\item Weighted 3-SAT
+	\item Clique (of size k)
+	\item Independent set (of size k)
+\end{itemize}
 \subsection{W[2]}
 \subsection{W[i]}
 \label{sec:W}
