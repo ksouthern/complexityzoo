@@ -80,6 +80,12 @@ Informally: all problems that can be solved in nondeterministic polynomial time.
 \end{definition}
 $ $
 \\
+Turing Machine definition:
+\begin{definition}
+	$$x \in \mathbf{NP}\iff \exists w : \|w\| \leq p(\|x\|) \text{s.t.} M(x, w) = 1$$
+\end{definition}
+$ $
+\\
 \\
 In terms of a verifier:
 \\
@@ -101,6 +107,18 @@ Notable Problems in $\mathbf{NP}$:
 	\item TSP
 	\item Subset sum
 \end{itemize}
+\subsection{coNP}
+\label{sec:coNP}
+Turing Machine definition:
+\begin{definition}
+	$$x \in \mathbf{coNP}\iff \forall w : \|w\| \leq p(\|x\|) \text{s.t.} M(x, w) = 1$$
+\end{definition}
+$ $
+\\
+\\
+In terms of a verifier:
+\\
+Informally: The set of decision problems where a solution can be refuted in polynomial time.
 \subsection{FPT}
 \label{sec:FPT}
 Informally, the set of problems that can be solved in polynomial time for some fixed parameter.
@@ -152,10 +170,11 @@ Notable Problems in $\mathbf{W[1]}$:
 \subsection{PTAS}
 
 \subsection{L}
+\label{sec:L}
 Informally: all problems that can be solved using logarithmic space (excluding the input)
 \\
 \begin{definition}
-	$\mathbf{L} = \hyperref[sec:SPACE]{\text{SPACE}[\log n]}$
+	$$\mathbf{L} = \hyperref[sec:SPACE]{\text{SPACE}[\log n]}$$
 \end{definition}
 $ $
 \\
@@ -167,17 +186,18 @@ Notable Problems in $\mathbf{L}$:
 	\item Planar Graph Isomorphism
 \end{itemize}
 \subsection{NL}
+\label{sec:NL}
 Informally: all problems that can be solved using nondeterministic logarithmic space (excluding the input)
 \\
 \begin{definition}
-	$\mathbf{NL} = \hyperref[sec:NSPACE]{\text{NSPACE}[\log n]}$
+	$$\mathbf{NL} = \hyperref[sec:NSPACE]{\text{NSPACE}[\log n]}$$
 \end{definition}
 $ $
 \\
 This means you effectively have the input and then a fixed number of counters/pointers (up to the size of the input)
 \\
 \begin{definition}
-	$\mathbf{NL} = \mathbf{coNL}$
+	$$\mathbf{NL} = \mathbf{coNL}$$
 \end{definition}
 $ $
 \\
@@ -188,8 +208,6 @@ Notable Problems in $\mathbf{NL}$:
 \end{itemize}
 
 \subsection{PSPACE}
-
-\subsection{coNP}
 
 \subsection{$\Sigma^p_2$}
 
