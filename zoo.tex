@@ -152,8 +152,40 @@ Notable Problems in $\mathbf{W[1]}$:
 \subsection{PTAS}
 
 \subsection{L}
-
+Informally: all problems that can be solved using logarithmic space (excluding the input)
+\\
+\begin{definition}
+	$\mathbf{L} = \hyperref[sec:SPACE]{\text{SPACE}[\log n]}$
+\end{definition}
+$ $
+\\
+This means you effectively have the input and then a fixed number of counters/pointers (up to the size of the input)
+\\
+\\
+Notable Problems in $\mathbf{L}$:
+\begin{itemize}
+	\item Planar Graph Isomorphism
+\end{itemize}
 \subsection{NL}
+Informally: all problems that can be solved using nondeterministic logarithmic space (excluding the input)
+\\
+\begin{definition}
+	$\mathbf{NL} = \hyperref[sec:NSPACE]{\text{NSPACE}[\log n]}$
+\end{definition}
+$ $
+\\
+This means you effectively have the input and then a fixed number of counters/pointers (up to the size of the input)
+\\
+\begin{definition}
+	$\mathbf{NL} = \mathbf{coNL}$
+\end{definition}
+$ $
+\\
+Notable Problems in $\mathbf{NL}$:
+\begin{itemize}
+	\item Reachability
+	\item Unreachability
+\end{itemize}
 
 \subsection{PSPACE}
 
@@ -215,4 +247,5 @@ Notable Problems in $\mathbf{W[1]}$:
 
 \subsection{PPAD}
 
+\subsection{co-NP}
 \end{document}
