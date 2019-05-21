@@ -197,6 +197,11 @@ $ $
 This means you effectively have the input and then a fixed number of counters/pointers (up to the size of the input)
 \\
 \begin{definition}
+	$$\mathbf{NL} = \text{SO(Krom)}$$
+\end{definition}
+$ $
+\\
+\begin{definition}
 	$$\mathbf{NL} = \mathbf{coNL}$$
 \end{definition}
 $ $
@@ -210,15 +215,66 @@ Notable Problems in $\mathbf{NL}$:
 \subsection{PSPACE}
 
 \subsection{$\Sigma^p_2$}
-
+\label{sec:sigmap2}
+\begin{definition}
+	$$\Sigma_2^P = \hyperref[sec:NP]{\textbf{NP}^{\textbf{NP}}}$$
+\end{definition}
+$ $
+\\
+Turing Machine definition:
+\begin{definition}
+	$$x \in \Sigma_2^P\iff \exists w : \|w\| \leq p(\|x\|) \forall u : \|u\| \leq p(\|x\|)\text{s.t.} M(x, w,u) = 1$$
+\end{definition}
 \subsection{$\Sigma^p_i$}
-
+\label{sec:sigmapi}
+\begin{definition}
+	$$\Sigma_i^P = \hyperref[sec:NP]{\textbf{NP}}^{\hyperref[sec:sigmapi]{\Sigma_{i-1}^P}}$$
+\end{definition}
+$ $
+\\
+Turing Machine definition:
+\begin{definition}
+	$$x \in \Sigma_i^P\iff \exists u_1\forall u_2 ... Q_i u_i M(x,u_1,...,u_i) = 1$$
+	$|u_j| \leq p(x)$ and $Q_i=\forall/\exists$ if $i$ is even/odd.
+\end{definition}
+$ $
+\\
+\begin{definition}
+	$$\Sigma_i^p ={\hyperref[sec:pipi]{co-\Pi_{i}^p}}$$
+\end{definition}
 \subsection{$\Pi^p_2$}
-
+\label{sec:pip2}
+\begin{definition}
+	$$\Pi_2^P = \hyperref[sec:coNP]{\textbf{coNP}^{\textbf{NP}}}$$
+\end{definition}
+$ $
+\\
+Turing Machine definition:
+\begin{definition}
+	$$x \in \Pi_2^P\iff \forall w : \|w\| \leq p(\|x\|) \exists u : \|u\| \leq p(\|x\|)\text{s.t.} M(x, w,u) = 1$$
+\end{definition}
 \subsection{$\Pi^p_i$}
-
+\label{sec:pipi}
+\begin{definition}
+	$$\Pi_i^P = \hyperref[sec:coNP]{\textbf{coNP}}^{\hyperref[sec:sigmapi]{\Sigma_{i-1}^P}}$$
+\end{definition}
+$ $
+\\
+Turing Machine definition:
+\begin{definition}
+	$$x \in \Pi_i^P\iff \forall u_1\exists u_2 ... Q_i u_i M(x,u_1,...,u_i) = 1$$
+	$|u_j| \leq p(x)$ and $Q_i=\exists/\forall$ if $i$ is even/odd.
+\end{definition}
+$ $
+\\
+\begin{definition}
+	$$\Pi_i^p ={\hyperref[sec:sigmapi]{co-\Sigma_{i}^p}}$$
+\end{definition}
 \subsection{PH}
-
+\label{sec:PH}
+\begin{definition}
+	$$\textbf{PH} =\bigcup_i\hyperref[sec:sigmapi]{\Sigma_{i}^p}$$
+\end{definition}
 \subsection{$P^{SAT}$}
 
 \subsection{$NP^{SAT}$}
@@ -265,5 +321,4 @@ Notable Problems in $\mathbf{NL}$:
 
 \subsection{PPAD}
 
-\subsection{co-NP}
 \end{document}
