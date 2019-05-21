@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.2.3)  21 MAY 2019 15:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.2.3)  21 MAY 2019 15:56
 entering extended mode
 **./zoo.tex
 (zoo.tex
@@ -595,33 +595,57 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 328.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 366--368
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 340.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 340.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 340.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 343.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 343.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 343.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 377--379
 
  []
 
-[8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 398.
- [9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 398.
+[8] [9]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 409.
+ [10]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 409.
  (zoo.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 398.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 398.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 409.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 409.
 Package rerunfilecheck Info: File `zoo.out' has not changed.
-(rerunfilecheck)             Checksum: 6D559C1082AE2B181646CAC770328637;2130.
+(rerunfilecheck)             Checksum: C073249353B4D2B823C6F45F31F46C6F;2294.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 398.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 409.
  ) 
 Here is how much of TeX's memory you used:
- 5349 strings out of 492946
- 77902 string characters out of 3126711
- 165957 words of memory out of 3000000
- 9132 multiletter control sequences out of 15000+200000
+ 5361 strings out of 492946
+ 78061 string characters out of 3126711
+ 166073 words of memory out of 3000000
+ 9138 multiletter control sequences out of 15000+200000
  12745 words of font info for 49 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,5n,31p,281b,413s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 28i,5n,31p,281b,407s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Karl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
 cm/cmbx10.pfb><C:/Users/Karl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/cm/cmbx12.pfb><C:/Users/Karl/AppData/Local/Programs/MiKTeX 2.9/font
@@ -647,9 +671,9 @@ grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Karl/AppDat
 a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/
 Users/Karl/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbol
 s/msbm7.pfb>
-Output written on zoo.pdf (9 pages, 242597 bytes).
+Output written on zoo.pdf (10 pages, 244985 bytes).
 PDF statistics:
- 360 PDF objects out of 1000 (max. 8388607)
- 88 named destinations out of 1000 (max. 500000)
- 305 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 380 PDF objects out of 1000 (max. 8388607)
+ 94 named destinations out of 1000 (max. 500000)
+ 329 words of extra memory for PDF output out of 10000 (max. 10000000)
 
