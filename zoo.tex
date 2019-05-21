@@ -38,6 +38,15 @@ Informally: problems that can be solved non-deterministically in f(n) space.
 	Given some function $f : \mathbb{N} \to \mathbb{N}$, $\text{NSPACE}[f(n)]$ are the set of problems solvable using a tape of length $O(f(n))$ on a non-deterministic Turing machine. Where $n$ is the size of the input.
 \end{definition}
 
+\subsection{SIZE[t]}
+\label{sec:size}
+Informally: problems that can be solved by a circuit of size t(n)
+\\
+Formally:
+\begin{definition}
+	A language L is in SIZE[t] if there is a t(n)-size circuit
+	family $ \{ C_n \}_{n\in \mathbb{N}} s.t. \forall x \in \{0, 1\}^n, x \in L \iff C_n(x) = 1.$
+\end{definition}
 
 \subsection{$\mathbf{P}$}
 \label{sec:P}
