@@ -5,32 +5,33 @@
 \usepackage{amssymb}
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
+\newtheorem{problem}{Problem}[section]
 \begin{document}
 	
 \section{Complexity Zoo}
 
-\subsection{TIME[f(n)]}
+\subsection{TIME[$f(n)$]}
 \label{sec:TIME}
-Informally: problems that can be solved in f(n) time. 
+Informally: problems that can be solved in $f(n)$ time. 
 \begin{definition}
 	Given some function $f : \mathbb{N} \to \mathbb{N}$, $\text{TIME}[f(n)]$ are the set of problems solvable within $O(f(n))$ atomic steps on a deterministic Turing machine. Where $n$ is the size of the input.
 \end{definition}
 
-\subsection{NTIME[f(n)]}
+\subsection{NTIME[$f(n)$]}
 \label{sec:NTIME}
-Informally: problems that can be solved nondeterministically in f(n) time. 
+Informally: problems that can be solved nondeterministically in $f(n)$ time. 
 \begin{definition}
 	Given some function $f : \mathbb{N} \to \mathbb{N}$, $\text{NTIME}[f(n)]$ are the set of problems solvable within $O(f(n))$ atomic steps on a nondeterministic Turing machine.
 \end{definition}
 
-\subsection{SPACE[f(n)]}
+\subsection{SPACE[$f(n)$]}
 \label{sec:SPACE}
-Informally: problems that can be solved in f(n) space. 
+Informally: problems that can be solved in $f(n)$ space. 
 \begin{definition}
 	Given some function $f : \mathbb{N} \to \mathbb{N}$, $\text{SPACE}[f(n)]$ are the set of problems solvable using a tape of length $O(f(n))$ on a deterministic Turing machine. Where $n$ is the size of the input.
 \end{definition}
 
-\subsection{NSPACE[f(n)]}
+\subsection{NSPACE[$f(n)$]}
 \label{sec:NSPACE}
 Informally: problems that can be solved non-deterministically in f(n) space. 
 \begin{definition}
@@ -82,7 +83,7 @@ $ $
 \\
 Turing Machine definition:
 \begin{definition}
-	$$x \in \mathbf{NP}\iff \exists w : \|w\| \leq p(\|x\|) \text{s.t.} M(x, w) = 1$$
+	$$x \in \mathbf{NP}\iff \exists w : \|w\| \leq p(\|x\|) \text{ s.t. } M(x, w) = 1$$
 \end{definition}
 $ $
 \\
@@ -207,6 +208,7 @@ Notable Problems in $\mathbf{NL}$:
 	\item Unreachability
 \end{itemize}
 
+\iffalse
 \subsection{PSPACE}
 
 \subsection{$\Sigma^p_2$}
@@ -262,8 +264,29 @@ Notable Problems in $\mathbf{NL}$:
 \subsection{BQP}
 
 \subsection{$\# P$}
+\fi
+\subsection{TFNP}
+Conventional complexity classes are concerned with decision problems, i.e., given a graph $G$ and some number $k$ determine whether or not $G$ has a clique of size $k$.\\
+This loses its meaning when the answer is always `yes' - for example, does this bimatrix game have a mixed Nash equilibrium?\\
+\begin{definition}
+	TFNP is the set of binary relations $R(x, y)$ such that for every $x$ there exists at least one $y$ (which is at most polynomially larger than $x$) such that $R(x,y)$ holds.
+	Algorithms that solve problems in this class take an input $x$ and produce some $y$ such that $R(x, y)$ holds, in polynomial time.
+\end{definition}
 
 \subsection{PPAD}
+An example of a problem in TFNP is the following:
+\begin{problem}
+	\textsc{End of the line.} We are given a graph $G$ that is a disjoint union of directed paths - every vertex has at most one predecessor and at most one successor. This graph may be exponentially sized,
+	but is given implicitly as a Turing machine computing the predecessor and successor of each node (if they exist, otherwise signals that this node is a sink/source).\\
+	Given a source in $G$, can we find a sink, or any other source, in polynomial time?
+\end{problem}
 
-\subsection{co-NP}
+Of course, a sink always exists, but simply moving along successor edges may visit all (exponentially many) nodes of a graph.
+
+\begin{definition}
+	PPAD is the set of problems in TFNP reducible to \textsc{End of the line.}
+\end{definition}
+
+A notable problem in PPAD, which turns out to be PPAD-complete, is to compute a mixed Nash equilibrium of some bimatrix game.
+
 \end{document}
