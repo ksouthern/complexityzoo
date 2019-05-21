@@ -69,10 +69,14 @@ Descriptive Complexity definitions:
 $ $
 \\
 \\
-Circuit Complexity definition:
+Circuit Complexity definitions:
 \begin{definition}
 	$$\textbf{P} = \textbf{P}-\text{uniform}$$
-	$\textbf{P}-\text{uniform} = $ Set of circuit families$\{C_n\}_{n\in\mathbb{N}}$ for which there is a polynomial TM that on input $1^n $ outputs the description of $ C_n$
+	$\textbf{P}-\text{uniform} = $ Set of circuit families$\{C_n\}_{n\in\mathbb{N}}$ for which there is a Turing Machine that on input $1^n $ outputs the description of $ C_n$ in polynomial time.
+\end{definition}
+\begin{definition}
+	$$\textbf{P} = \hyperref[sec:L]{\textbf{L}}-\text{uniform}$$
+	$\textbf{L}-\text{uniform} = $ Set of circuit families$\{C_n\}_{n\in\mathbb{N}}$ for which there is a Turing Machine that on input $1^n $ outputs the description of $ C_n$ using logarithmic space. 
 \end{definition}
 $ $
 \\
@@ -312,17 +316,28 @@ Informally: Problems that take exponential time to solve.
 \begin{definition}
 	$$\textbf{EXP}= \bigcup_c \hyperref[sec:time]{\text{TIME}[2^{n^c}]}$$
 \end{definition}
-\iffalse
+\subsection{$\textbf{NC}^0$}
+\label{sec:NC0}
+Constant size circuits.
+\subsection{$\textbf{NC}^1$}
+\label{sec:NC1}
+Contains Parity.
+\subsection{$\textbf{NC}^2$}
+\label{sec:NC2}
+Contains Reachability.
+\subsection{$\textbf{NC}^i$}
+\label{sec:NCi}
+\begin{definition}
+	$ $
+	\\	
+	$\textbf{NC}^i = $ all languages decidable by an \textbf{L}-uniform circuit family of polynomial size and depth $O(\log^i n)$
+\end{definition}
 \subsection{NC}
-
-\subsection{$NC_0$}
-
-\subsection{$NC_1$}
-
-\subsection{$NC_2$}
-
-\subsection{$NC_i$}
-
+\label{sec:NC}
+\begin{definition}
+	$$\textbf{NC} = \bigcup_i \hyperref[sec:NCi]{\textbf{NC}^i}$$
+\end{definition}
+\iffalse
 \subsection{$AC_i$}
 
 \subsection{$AC_0$}
