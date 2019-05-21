@@ -297,10 +297,7 @@ $ $
 \subsection{$\textbf{NP}^{\text{SAT}}$}
 \label{sec:npsat}
 $\textbf{NP}$ with a SAT oracle, equivalent to $\hyperref[sec:sigmap2]{\Sigma_2^p}$
-<<<<<<< HEAD
-=======
-\iffalse
->>>>>>> fc44ad57e87524fd93652c150e5f271824b8d53a
+
 \subsection{P/poly}
 \label{sec:ppoly}
 Circuit definition:
@@ -356,16 +353,22 @@ Constant size circuits with unbounded fan-in.
 \begin{definition}
 	$$\textbf{AC} = \bigcup_i \hyperref[sec:ACi]{\textbf{AC}^i}$$
 \end{definition}
-\iffalse
-
 
 \subsection{BPP}
-
+\label{sec:bpp}
+\begin{definition}
+	$ $
+	\\
+	$L\in \textbf{BPP}$ if there is a PTM $M$ that runs in poly time s.t. :
+	$$x \in L \implies 	Pr[M \text{ accepts } x]\geq \frac{2}{3}$$
+	$$x \notin L \implies 	Pr[M \text{ rejects } x]\geq \frac{2}{3}$$
+\end{definition}
 \subsection{RP}
 
 \subsection{co-RP}
 
 \subsection{ZPP}
+
 
 \subsection{APX}
 
@@ -376,7 +379,7 @@ Constant size circuits with unbounded fan-in.
 \subsection{BQP}
 
 \subsection{$\# P$}
-\fi
+
 \subsection{TFNP}
 Conventional complexity classes are concerned with decision problems, i.e., given a graph $G$ and some number $k$ determine whether or not $G$ has a clique of size $k$.\\
 This loses its meaning when the answer is always `yes' - for example, does this bimatrix game have a mixed Nash equilibrium?\\
