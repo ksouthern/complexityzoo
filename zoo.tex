@@ -297,6 +297,10 @@ $ $
 \subsection{$\textbf{NP}^{\text{SAT}}$}
 \label{sec:npsat}
 $\textbf{NP}$ with a SAT oracle, equivalent to $\hyperref[sec:sigmap2]{\Sigma_2^p}$
+<<<<<<< HEAD
+=======
+\iffalse
+>>>>>>> fc44ad57e87524fd93652c150e5f271824b8d53a
 \subsection{P/poly}
 \label{sec:ppoly}
 Circuit definition:
@@ -399,11 +403,30 @@ A notable problem in PPAD, which turns out to be PPAD-complete, is to compute a 
 
 \section{Graph Theory}
 \subsection{Definitions}
-The graph $H$ is a minor of the graph $G$ if a copy of $H$ can be obtained by deleting vertices and deleting or contracting edges of $G$. The contraction of the edge $(x,y)$ is achieved by replacing $x$ and $y$ with a new vertex $z$ such that $N(z)=N(x) \cup N(y)$.
+\begin{definition}[Graph]
+	A graph $G=(V,E)$ is a set of vertices $V$ together with a set of edges $E \subset V \times V$.
+\end{definition}
+\begin{definition}[Subgraph]
+	$H$ is a subgraph of $G$ if a copy of $H$ can be obtained from $G$ by deleting vertices and edges. $H$ is an induced subgraph of $G$ if $H$ can be obtained from $G$ by deleting only vertices.
+\end{definition}
+\begin{definition}[Minors]
+	The graph $H$ is a minor of the graph $G$ if a copy of $H$ can be obtained by deleting vertices and deleting or contracting edges of $G$. The contraction of the edge $(x,y)$ is achieved by replacing $x$ and $y$ with a new vertex $z$ such that $N(z)=N(x) \cup N(y)$.
+\end{definition}
+\begin{definition}[Topological Minors]
+	$H$ is a topological minor of $G$ if some sequence of subdivisions of $H$ results in an induced subgraph of $G$. An edge $(x,y)$ is subdivided by adding a vertex $z$ such that $N(z)= \{x,y\}$ 
+\end{definition}
 
-$H$ is a topological minor of $G$ if some sequence of subdivisions of $H$ results in an induced subgraph of $G$. An edge $(x,y)$ is subdivided by adding a vertex $z$ such that $N(z)= \{x,y\}$ 
-\subsection{Graphs}
-Claw
 \subsection{Graph Classes}
+	\begin{definition}[Hereditary Classes]
+		A class of graphs $X$ is hereditary if, for any $G \in X$, every induced subgraph $H$ of $G$ also belongs to $X$.
+	\end{definition}
+	
+	\begin{definition} [Forbidden Induced Subgraphs]
+		$H$ is a minimal forbidden induced subgraph for the class $X$ if every proper induced subgraph of $H$ belongs to $X$ but $H$ itself does not. Any hereditary class is characterized by the avoidance of some set of minimal forbidden induced subgraphs $MFIS(X)$.
+	\end{definition}
 
+	\begin{definition} [Bipartite Graphs]
+		A graph $G$ is bipartite if its vertices can be partitioned into (at most) two independent sets. A graph is bipartite if and only if it contains no odd cycle. Equivalently, the set of minimal forbidden induced subgraphs for the class of bipartite graphs is the set of all odd cycles.
+	\end{definition}
+\subsection{Graphs}
 \end{document}
