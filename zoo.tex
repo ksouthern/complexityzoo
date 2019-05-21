@@ -71,7 +71,8 @@ $ $
 \\
 Circuit Complexity definition:
 \begin{definition}
-	$$\mathbf{P} = \text{Set of problems that can be solved by a polynomial-time uniform family of boolean circuits}$$
+	$$\textbf{P} = \textbf{P}-\text{uniform}$$
+	$\textbf{P}-\text{uniform} = $ Set of circuit families$\{C_n\}_{n\in\mathbb{N}}$ for which there is a polynomial TM that on input $1^n $ outputs the description of $ C_n$
 \end{definition}
 $ $
 \\
@@ -292,13 +293,26 @@ $ $
 \subsection{$\textbf{NP}^{\text{SAT}}$}
 \label{sec:npsat}
 $\textbf{NP}$ with a SAT oracle, equivalent to $\hyperref[sec:sigmap2]{\Sigma_2^p}$
-\iffalse
 \subsection{P/poly}
-
-\subsection{P-Uniform}
-
+\label{sec:ppoly}
+Circuit definition:
+\begin{definition}
+	$$\textbf{P/poly} = \bigcup_c \hyperref[sec:size]{\text{SIZE}[n^c]}$$
+\end{definition}
+$ $
+\\
+Turing Machine definition: decision problems solvable by a polynomial-time Turing machine that receives an 'advice string' that is polynomial is size.
+\\
+More formally:
+\begin{definition}
+		$$\textbf{P/poly} = \bigcup_{c,d} \hyperref[sec:time]{\text{TIME}[n^c]}/n^d$$
+\end{definition}
 \subsection{EXP}
-
+Informally: Problems that take exponential time to solve.
+\begin{definition}
+	$$\textbf{EXP}= \bigcup_c \hyperref[sec:time]{\text{TIME}[2^{n^c}]}$$
+\end{definition}
+\iffalse
 \subsection{NC}
 
 \subsection{$NC_0$}
