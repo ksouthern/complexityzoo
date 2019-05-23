@@ -3,9 +3,16 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
-\theoremstyle{definition}
+\newtheoremstyle{break}
+{\topsep}{\topsep}%
+{\itshape}{}%
+{\bfseries}{}%
+{\newline}{}%
+\theoremstyle{break}
+\theoremstyle{break}
 \newtheorem{definition}{Definition}[section]
 \newtheorem{problem}{Problem}[section]
+\newtheorem{theorem}{Theorem}[section]
 \begin{document}
 	
 \section{Complexity Zoo}
@@ -329,8 +336,6 @@ Contains Reachability.
 \subsection{$\textbf{NC}^i$}
 \label{sec:NCi}
 \begin{definition}
-	$ $
-	\\	
 	$\textbf{NC}^i = $ all languages decidable by an \textbf{L}-uniform circuit family of polynomial size and depth $O(\log^i n)$
 \end{definition}
 \subsection{NC}
@@ -344,8 +349,6 @@ Constant size circuits with unbounded fan-in.
 \subsection{$\textbf{AC}^i$}
 \label{sec:ACi}
 \begin{definition}
-	$ $
-	\\	
 	$\textbf{AC}^i = $ all languages decidable by a non-uniform circuit family of polynomial size and depth $O(\log^i n)$
 \end{definition}
 \subsection{AC}
@@ -357,18 +360,44 @@ Constant size circuits with unbounded fan-in.
 \subsection{BPP}
 \label{sec:bpp}
 \begin{definition}
-	$ $
-	\\
 	$L\in \textbf{BPP}$ if there is a PTM $M$ that runs in poly time s.t. :
 	$$x \in L \implies 	Pr[M \text{ accepts } x]\geq \frac{2}{3}$$
 	$$x \notin L \implies 	Pr[M \text{ rejects } x]\geq \frac{2}{3}$$
 \end{definition}
+This can be amplified to:
+\begin{definition}
+	$L\in \textbf{BPP}$ if there is a PTM $M$ that runs in poly time s.t. :
+	$$x \in L \implies 	Pr[M \text{ accepts } x]\geq 1 - 2^{-p(n)}$$
+	$$x \notin L \implies 	Pr[M \text{ rejects } x]\geq 1 - 2^{-p(n)}$$
+\end{definition}
 \subsection{RP}
-
+\label{sec:rp}
+\begin{definition}
+	$L\in \textbf{RP}$ if there is a PTM $M$ that runs in poly time s.t. :
+	$$x \in L \implies 	Pr[M \text{ accepts } x]\geq \frac{1}{2}$$
+	$$x \notin L \implies 	Pr[M \text{ rejects } x] = 1$$
+\end{definition}
+This can be amplified to:
+\begin{definition}
+	$L\in \textbf{RP}$ if there is a PTM $M$ that runs in poly time s.t. :
+	$$x \in L \implies 	Pr[M \text{ accepts } x]\geq 1 - 2^{-p(n)}$$
+	$$x \notin L \implies 	Pr[M \text{ rejects } x] = 1$$
+\end{definition}
 \subsection{co-RP}
-
+\label{sec:co-rp}
+\begin{definition}
+	$$\textbf{co-RP} = \{\bar{L}| L\in \hyperref[sec:rp]{\textbf{RP}} \}$$
+\end{definition}
+\begin{definition}
+	$L\in \textbf{co-RP}$ if there is a PTM $M$ that runs in poly time s.t. :
+	$$x \in L \implies 	Pr[M \text{ accepts } x] = 1$$
+	$$x \notin L \implies 	Pr[M \text{ rejects } x] \geq 1 - 2^{-p(n)}$$
+\end{definition}
 \subsection{ZPP}
-
+\label{sec:zpp}
+\begin{definition}
+	$$\textbf{ZPP} = \hyperref[sec:rp]{\textbf{RP}} \cap \hyperref[sec:co-rp]{\textbf{co-RP}}$$
+\end{definition}
 
 \subsection{APX}
 
@@ -403,17 +432,51 @@ Of course, a sink always exists, but simply moving along successor edges may vis
 \end{definition}
 
 A notable problem in PPAD, which turns out to be PPAD-complete, is to compute a mixed Nash equilibrium of some bimatrix game.
-
+\section{Problems}
+\label{prob:colouring}
+\begin{problem}[Colouring]
+	\textit{Instance}: a graph $G$ and an integer $k$.
+	\\
+	\textit{Question}: does $G$ have a $k$-colouring.
+\end{problem}
+\label{prob:kcolouring}
+\begin{problem}[$k$-Colouring]
+	\textit{Instance}: a graph $G$.
+	\\
+	\textit{Question}: does $G$ have a $k$-colouring.
+\end{problem}
+\section{Theorems}
+\begin{theorem}[Lov\'asz, 1973]
+	\hyperref[prob:kcolouring]{3-Colouring} is \hyperref[sec:NP]{NP-Complete}
+\end{theorem}
+\begin{theorem}[Appel \& Haken, 1977]
+	Every planar graphs is\hyperref[prob:kcolouring]{4-colourable} 
+\end{theorem}
+\begin{theorem}[Dailey, 1980]
+	\hyperref[prob:kcolouring]{3-Colouring} is \hyperref[sec:NP]{NP-Complete} for planar graphs.
+\end{theorem}
+\begin{theorem}[Gr\"otzsch, 1980]
+	Every triangle free planar graph is\hyperref[prob:kcolouring]{3-colourable} 
+\end{theorem}
 \section{Graph Theory}
 \subsection{Definitions}
 \begin{definition}[Graph]
 	A graph $G=(V,E)$ is a set of vertices $V$ together with a set of edges $E \subset V \times V$.
 \end{definition}
 \begin{definition}[Subgraph]
-	$H$ is a subgraph of $G$ if a copy of $H$ can be obtained from $G$ by deleting vertices and edges. $H$ is an induced subgraph of $G$ if $H$ can be obtained from $G$ by deleting only vertices.
+	$H$ is a subgraph of $G$ if a copy of $H$ can be obtained from $G$ by deleting vertices and edges. 
+\end{definition}
+\begin{definition}[Induced Subgraph]
+	$H$ is a subgraph of $G$ if a copy of $H$ can be obtained from $G$ by deleting vertices.
+\end{definition}
+\begin{definition}[Spanning Subgraph]
+	$H$ is a subgraph of $G$ if a copy of $H$ can be obtained from $G$ by deleting edges.
 \end{definition}
 \begin{definition}[Minors]
-	The graph $H$ is a minor of the graph $G$ if a copy of $H$ can be obtained by deleting vertices and deleting or contracting edges of $G$. The contraction of the edge $(x,y)$ is achieved by replacing $x$ and $y$ with a new vertex $z$ such that $N(z)=N(x) \cup N(y)$.
+	The graph $H$ is a minor of the graph $G$ if a copy of $H$ can be obtained by deleting vertices and deleting or contracting edges of $G$. 
+\end{definition}
+\begin{definition}[Induced Minors]
+	The graph $H$ is a minor of the graph $G$ if a copy of $H$ can be obtained by deleting vertices and contracting edges of $G$. 
 \end{definition}
 \begin{definition}[Topological Minors]
 	$H$ is a topological minor of $G$ if some sequence of subdivisions of $H$ results in an induced subgraph of $G$. An edge $(x,y)$ is subdivided by adding a vertex $z$ such that $N(z)= \{x,y\}$ 
@@ -430,6 +493,10 @@ A notable problem in PPAD, which turns out to be PPAD-complete, is to compute a 
 
 	\begin{definition} [Bipartite Graphs]
 		A graph $G$ is bipartite if its vertices can be partitioned into (at most) two independent sets. A graph is bipartite if and only if it contains no odd cycle. Equivalently, the set of minimal forbidden induced subgraphs for the class of bipartite graphs is the set of all odd cycles.
+	\end{definition}
+
+	\begin{definition} [Planar Graph]
+		A graph $G$ is planar if it can be drawn without any of the edges crossing.
 	\end{definition}
 \subsection{Graphs}
 \end{document}
