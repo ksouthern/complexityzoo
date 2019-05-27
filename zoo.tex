@@ -187,9 +187,32 @@ Notable Problems in $\mathbf{W[1]}$:
 \subsection{W[2]}
 \subsection{W[i]}
 \label{sec:W}
-\subsection{FPTAS}
+\subsection{FPTAS} \label{sec:FPTAS}
+
+\begin{definition}
+	An algorithm $A$ is a full polynomial-time approximation scheme (FPTAS) if, for any instance $x$ and any $\epsilon > 0$, $A$ computes a $(1 + \epsilon)$-approximate solution in time polynomial in both $|x|$ and $\frac{1}{\epsilon}$.
+\end{definition}
+
+\begin{definition}
+	$\mathbf{FPTAS}$ is the class of all problems that admit a full polynomial-time approximation scheme.
+\end{definition}
+$ $
+\\
+Notable problems in $\mathbf{FPTAS}$:
+\begin{itemize}
+	\item Minimum Partition
+	\item Maximum Knapsack
+\end{itemize}
 
 \subsection{PTAS}
+
+\begin{definition}
+	An algorithm $A$ is a polynomial-time approximation scheme (PTAS) if, for any instance $x$ and any $\epsilon > 0$, $A$ computes a $(1 + \epsilon)$-approximate solution in time polynomial in $|x|$.
+\end{definition}
+
+\begin{definition}
+	$\mathbf{PTAS}$ is the class of all problems that admit a polynomial-time approximation scheme.
+\end{definition}
 
 \subsection{L}
 \label{sec:L}
@@ -234,8 +257,39 @@ Notable Problems in $\mathbf{NL}$:
 	\item Unreachability
 \end{itemize}
 
+\subsection{AP} \label{sec:AP}
 
-\subsection{PSPACE}
+\begin{definition}[Alternating Turing Machine]
+	An Alternating Turing Machine is a non-deterministic TM $M$ whose states $Q$ are divided into two parts, $Q_{\text{AND}}$ and $Q_{\text{OR}}$. An eventually accepting configuration (e.a.c.) on an input $x$ is defined as follows:
+	
+	\begin{itemize}
+		\item All accepting leaves in the computation tree $M(x)$ are e.a.c.
+		\item A configuration with state in $Q_{\text{AND}}$ is e.a.c. iff all of its successor states are e.a.c.
+		\item A configuration with state in $Q_{\text{OR}}$ is e.a.c. iff at least one of its successor states are e.a.c.
+	\end{itemize}
+	
+	An Alternating TM $M$ accepts $x$ iff the initial configuration of $M(x)$ is e.a.c.
+\end{definition}
+
+\begin{definition}
+	$\mathbf{AP}$ is the set of all problems decidable in polynomial time by an Alternating TM.
+\end{definition}
+
+\subsection{PSPACE} \label{sec:PSPACE}
+
+Informally: all problems that can be solved using polynomial space on the size of the input.
+
+\begin{definition}
+	$$\mathbf{PSPACE} = \bigcup_{k \geq 0} \hyperref[sec:SPACE]{\text{SPACE}[n^k]}$$
+\end{definition}
+
+\begin{definition}
+	$$\mathbf{PSPACE} = \hyperref[sec:AP]{\mathbf{AP}}$$
+\end{definition}
+
+\begin{definition}
+	$$\mathbf{PSPACE} = \hyperref[sec:NPSPACE]{\mathbf{NPSPACE}}$$
+\end{definition}
 
 \subsection{$\Sigma^p_2$}
 \label{sec:sigmap2}
@@ -399,9 +453,26 @@ This can be amplified to:
 	$$\textbf{ZPP} = \hyperref[sec:rp]{\textbf{RP}} \cap \hyperref[sec:co-rp]{\textbf{co-RP}}$$
 \end{definition}
 
-\subsection{APX}
+\subsection{APX} \label{sec:APX}
 
-\subsection{PO}
+Informally: the class of all optimisation problems that are $c$-approximable for some constant $c$.
+\\
+\\
+Notable problems in $\mathbf{APX}$:
+\begin{itemize}
+	\item Minimum Vertex Cover
+	\item Max 2-SAT
+\end{itemize}
+
+\subsection{PO} \label{sec:PO}
+
+Informally: the class of all optimisation problems that are solvable exactly in polynomial time.
+\\
+\\
+Notable problems in $\mathbf{PO}$:
+\begin{itemize}
+	\item Min Cut/Max Flow
+\end{itemize}
 
 \subsection{PCP}
 
