@@ -234,8 +234,23 @@ Notable Problems in $\mathbf{NL}$:
 	\item Unreachability
 \end{itemize}
 
+\subsection{AP} \label{sec:AP}
 
-\subsection{PSPACE}
+\begin{definition}[Alternating Turing Machine]
+	An Alternating Turing Machine is a non-deterministic TM $M$ whose states $Q$ are divided into two parts, $Q_{\text{AND}}$ and $Q_{\text{OR}}$. An eventually accepting configuration (e.a.c.) on an input $x$ is defined as follows:
+	
+	\begin{itemize}
+		\item All accepting leaves in the computation tree $M(x)$ are e.a.c.
+		\item A configuration with state in $Q_{\text{AND}}$ is e.a.c. iff all of its successor states are e.a.c.
+		\item A configuration with state in $Q_{\text{OR}}$ is e.a.c. iff at least one of its successor states are e.a.c.
+	\end{itemize}
+	
+	An Alternating TM $M$ accepts $x$ iff the initial configuration of $M(x)$ is e.a.c.
+\end{definition}
+
+\begin{definition}
+	$\mathbf{AP}$ is the set of all problems decidable in polynomial time by an Alternating TM.
+\end{definition}
 
 \subsection{$\Sigma^p_2$}
 \label{sec:sigmap2}
