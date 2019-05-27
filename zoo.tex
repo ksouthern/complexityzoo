@@ -187,7 +187,22 @@ Notable Problems in $\mathbf{W[1]}$:
 \subsection{W[2]}
 \subsection{W[i]}
 \label{sec:W}
-\subsection{FPTAS}
+\subsection{FPTAS} \label{sec:FPTAS}
+
+\begin{definition}
+	An algorithm $A$ is a full polynomial-time approximation scheme (FPTAS) if, for any instance $x$ and any $\epsilon > 0$, $A$ computes a $(1 + \epsilon)$-approximate solution in time polynomial in both $|x|$ and $\frac{1}{\epsilon}$.
+\end{definition}
+
+\begin{definition}
+	$\mathbf{FPTAS}$ is the class of all problems that admit a full polynomial-time approximation scheme.
+\end{definition}
+$ $
+\\
+Notable problems in $\mathbf{FPTAS}$:
+\begin{itemize}
+	\item Minimum Partition
+	\item Maximum Knapsack
+\end{itemize}
 
 \subsection{PTAS}
 
